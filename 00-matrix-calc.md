@@ -162,7 +162,7 @@ A scalar is a single real number: x ∈ ℝ
 The symbol ℝ represents the set of all real numbers (positive, negative, and zero).
 
 **Definition - Vector**: 
-A vector is an ordered array of scalars: 𝐱 = [x₁, x₂, ..., xₙ]ᵀ ∈ ℝⁿ
+A vector is an ordered array of scalars: $\mathbf{x} = [x_1, x_2, ..., x_n]^T \in \mathbb{R}^n$
  
 The superscript T means "transpose" - it flips the vector from a row to a column or vice versa.
  
@@ -178,7 +178,10 @@ $X_{ij}$ represents the element in the i-th row and j-th column.
 **Scalars:** lowercase letters (x, y, z, a, b, c)
 
 - These represent single numbers
-- Example: x = 5
+- Example: $x = 5$
+
+**Vectors:** lowercase bold letters (**x**, **y**, **z**)
+
 
 **Vectors:** lowercase bold letters (**x**, **y**, **z**)
 
@@ -236,7 +239,7 @@ How does f change when we change x? When we change y? When we change both?
 
 **When we arrange these partial derivatives into a vector, we get the gradient:**
 
-- ∇f = [∂f/∂x, ∂f/∂y]ᵀ
+- $\nabla f = (\partial f / \partial x, \partial f / \partial y)^T$
 
 **The gradient tells us:**
 
@@ -333,14 +336,14 @@ To find the derivative, we use the power rule:
 - The derivative of -5x is -5
 - The derivative of 7 (a constant) is 0
 
-Therefore: ∂f/∂x = 3x² + 4x - 5
+Therefore: $(\partial f / \partial x) = 3x^2 + 4x - 5$
 
 **What this derivative tells us:**
 At any point x, the derivative gives us the instantaneous rate of change of f.
 
-**At x = 0:** ∂f/∂x = -5 (the function is decreasing at a rate of 5 units per unit of x)
+**At x = 0:** $(\partial f / \partial x) = -5$ (the function is decreasing at a rate of 5 units per unit of x)
 
-**At x = 1:** ∂f/∂x = 3(1)² + 4(1) - 5 = 2 (the function is increasing at a rate of 2 units per unit of x)
+**At x = 1:** $(\partial f / \partial x) = 3(1)^2 + 4(1) - 5 = 2$ (the function is increasing at a rate of 2 units per unit of x)
 
 **Geometric interpretation:**
 The derivative represents the slope of the tangent line to the curve y = f(x) at any point x.
@@ -423,7 +426,7 @@ These are critical points where the function might have local minima, maxima, or
 > 
 > To minimize f(𝐱), we update 𝐱 in the direction opposite to the gradient:
 > 
-> $\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)$
+> $𝐱ₖ₊₁ = 𝐱ₖ - α∇f(𝐱ₖ)$
 > 
 > where α > 0 is the learning rate (step size).
 > 
