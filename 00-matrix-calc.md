@@ -28,6 +28,7 @@ Matrix calculus is a powerful mathematical tool that extends ordinary calculus t
 Think of it this way: ordinary calculus deals with functions like f(x) = x², where you have one input and one output.
 
 Matrix calculus deals with more complex situations:
+
 - Functions with multiple inputs (like f(x,y,z) = x² + y² + z²)
 - Functions with multiple outputs (like position in 3D space)
 - Functions involving entire arrays of numbers (matrices)
@@ -37,6 +38,7 @@ Matrix calculus deals with more complex situations:
 In the real world, most problems involve many variables simultaneously.
 
 **Examples:**
+
 - A neural network might have millions of parameters that all need to be optimized together
 - The flight path of an airplane depends on altitude, speed, wind direction, and many other factors
 - Economic models consider prices, supply, demand, and hundreds of other variables
@@ -48,22 +50,27 @@ Matrix calculus gives us the tools to handle these complex, multi-variable situa
 Matrix calculus is essential for:
 
 **Machine Learning:**
+
 - Computing gradients for backpropagation in neural networks
 - This means figuring out how to adjust millions of parameters to reduce prediction errors
 
 **Optimization:**
+
 - Finding the best solution when you have many variables to consider
 - Like finding the minimum cost when you can adjust production, shipping, marketing, etc.
 
 **Statistics:**
+
 - Analyzing data with many variables (like predicting house prices based on size, location, age, etc.)
 - Deriving formulas for statistical methods like regression
 
 **Engineering:**
+
 - Designing control systems that manage multiple inputs and outputs
 - Signal processing for audio, video, and communications
 
 **Physics:**
+
 - Describing how fields (like electromagnetic fields) behave in space
 - Quantum mechanics calculations
 
@@ -153,7 +160,6 @@ Throughout this document, we use standard mathematical notation:
 
 - ∂ (partial derivative)
 - ∇ (gradient)
-- ẋ (time derivative)
 - f′ (function derivative)
 
 **Definition - Scalar**: 
