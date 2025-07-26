@@ -156,25 +156,30 @@ They're especially useful for representing linear relationships between multiple
 **Important**: We use consistent notation throughout this document to avoid confusion.
 
 **Scalars:** lowercase letters (x, y, z, a, b, c)
+
 - These represent single numbers
 - Example: x = 5
 
 **Vectors:** lowercase bold letters (**x**, **y**, **z**)
+
 - These represent lists of numbers (column vectors by default)
 - Example: **x** = [1, 2, 3]ᵀ
 - Dimensions: **x** ∈ ℝⁿ means **x** has n components
 
 **Matrices:** uppercase bold letters (**A**, **X**, **Y**)
+
 - These represent rectangular arrays of numbers
 - Example: **A** = [[1, 2], [3, 4]]
 - Dimensions: **A** ∈ ℝᵐˣⁿ means **A** has m rows and n columns
 
 **Functions:**
+
 - f, g, h for scalar-valued functions (output a single number)
 - **f**, **g** for vector-valued functions (output multiple numbers)
 - **F**, **G** for matrix-valued functions (output a matrix)
 
 **Derivatives:**
+
 - ∂ (partial derivative symbol)
 - ∇ (gradient operator)
 - **J** (Jacobian matrix)
@@ -193,11 +198,11 @@ The superscript T means "transpose" - it flips the vector from a row to a column
 ℝⁿ means "n-dimensional real space" - the set of all possible vectors with n real number components.
 
 **Definition - Matrix**: 
-A matrix is a rectangular array of scalars: 𝐗 ∈ ℝᵐˣⁿ with elements Xᵢⱼ
+A matrix is a rectangular array of scalars: 𝐗 ∈ ℝᵐˣⁿ with elements $X_{ij}$.
  
-ℝᵐˣⁿ means the set of all matrices with m rows and n columns.
- 
-Xᵢⱼ represents the element in the i-th row and j-th column.
+$\mathbb{R}^{m \times n}$ means the set of all matrices with m rows and n columns.
+
+$X_{ij}$ represents the element in the i-th row and j-th column.
 
 ### The Concept of Differentiation in Higher Dimensions
 

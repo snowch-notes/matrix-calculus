@@ -64,7 +64,7 @@ pandoc "$INPUT_FILE" \
     -o "$OUTPUT_FILE" \
     --metadata title="$TITLE" \
     --metadata author="$AUTHOR" \
-    --wrap=preserve
+    --wrap=preserve 
 
 # Check if the build was successful
 if [ -f "$OUTPUT_FILE" ]; then
