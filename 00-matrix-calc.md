@@ -156,6 +156,25 @@ They're especially useful for representing linear relationships between multiple
 
 **Important**: We use consistent notation throughout this document to avoid confusion.
 
+**Definition - Scalar**: 
+A scalar is a single real number: x ∈ ℝ
+ 
+The symbol ℝ represents the set of all real numbers (positive, negative, and zero).
+
+**Definition - Vector**: 
+A vector is an ordered array of scalars: 𝐱 = [x₁, x₂, ..., xₙ]ᵀ ∈ ℝⁿ
+ 
+The superscript T means "transpose" - it flips the vector from a row to a column or vice versa.
+ 
+ℝⁿ means "n-dimensional real space" - the set of all possible vectors with n real number components.
+
+**Definition - Matrix**: 
+A matrix is a rectangular array of scalars: 𝐗 ∈ ℝᵐˣⁿ with elements $X_{ij}$.
+ 
+$\mathbb{R}^{m \times n}$ means the set of all matrices with m rows and n columns.
+
+$X_{ij}$ represents the element in the i-th row and j-th column.
+
 **Scalars:** lowercase letters (x, y, z, a, b, c)
 
 - These represent single numbers
@@ -185,29 +204,6 @@ They're especially useful for representing linear relationships between multiple
 - ∇ (gradient operator)
 - **J** (Jacobian matrix)
 - **H** (Hessian matrix)
-
-**Definition - Scalar**: 
-A scalar is a single real number: x ∈ ℝ
- 
-The symbol ℝ represents the set of all real numbers (positive, negative, and zero).
-
-**Definition - Vector**: 
-A vector is an ordered array of scalars: 𝐱 = [x₁, x₂, ..., xₙ]ᵀ ∈ ℝⁿ
- 
-The superscript T means "transpose" - it flips the vector from a row to a column or vice versa.
- 
-ℝⁿ means "n-dimensional real space" - the set of all possible vectors with n real number components.
-
-**Definition - Matrix**: 
-A matrix is a rectangular array of scalars: 𝐗 ∈ ℝᵐˣⁿ with elements $X_{ij}$.
- 
-$\mathbb{R}^{m \times n}$ means the set of all matrices with m rows and n columns.
-
-$X_{ij}$ represents the element in the i-th row and j-th column.
-
-### The Concept of Differentiation in Higher Dimensions
-
-Let's start by remembering what a derivative means in ordinary calculus.
 
 **In single-variable calculus:**
 
@@ -427,7 +423,7 @@ These are critical points where the function might have local minima, maxima, or
 > 
 > To minimize f(𝐱), we update 𝐱 in the direction opposite to the gradient:
 > 
-> 𝐱ₖ₊₁ = 𝐱ₖ - α∇f(𝐱ₖ)
+> $\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)$
 > 
 > where α > 0 is the learning rate (step size).
 > 
