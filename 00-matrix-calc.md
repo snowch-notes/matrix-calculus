@@ -508,13 +508,16 @@ For example, in machine learning, we often add a term like λ||𝐖||²F to prev
 
 ### Case 4: Vector Function, Scalar Variable (∂𝐟/∂x)
 
-<div style="background-color:#f0f0f0; padding: 10px; border: 1px solid #ddd;">
-**API Description:**
-
-*   **Function Example:** 𝐟(x) = [x², x³]
-*   **Input:** Scalar (x ∈ ℝ). Example: x = 2
-*   **Output:** Vector (𝐟(x) ∈ ℝᵐ). Example: 𝐟(x) = [2², 2³] = [4, 8]
-</div>
+> **📋 Quick Reference**
+> 
+> | **Aspect** | **Details** |
+> |------------|-------------|
+> | **Function Type** | 𝐟: ℝ → ℝᵐ |
+> | **Example** | 𝐟(x) = [x², x³]ᵀ |
+> | **Input** | Scalar x (e.g., x = 2) |
+> | **Output** | Vector ∂𝐟/∂x ∈ ℝᵐ |
+> | **Result** | ∂𝐟/∂x = [2x, 3x²]ᵀ = [4, 12]ᵀ |
+> | **Interpretation** | Rate of change for each component |
 
 Now we consider functions that take a single scalar input and produce multiple scalar outputs (arranged in a vector).
 
@@ -569,13 +572,16 @@ At time t = π/2, the particle is moving in the negative x-direction at speed 1,
 
 ### Case 5: Vector Function, Vector Variable (∂𝐟/∂𝐱)
 
-<div style="background-color:#f0f0f0; padding: 10px; border: 1px solid #ddd;">
-**API Description:**
-
-*   **Function Example:** 𝐟(𝐱) = [x₁² + x₂, x₁x₂]
-*   **Input:** Vector (𝐱 ∈ ℝⁿ). Example: 𝐱 = [1, 2]
-*   **Output:** Vector (𝐟(𝐱) ∈ ℝᵐ) - Jacobian Matrix (𝐉 ∈ ℝᵐˣⁿ). Example: 𝐉 = [[2x₁, 1], [x₂, x₁]] = [[2, 1], [2, 1]]
-</div>
+> **📋 Quick Reference**
+> 
+> | **Aspect** | **Details** |
+> |------------|-------------|
+> | **Function Type** | 𝐟: ℝⁿ → ℝᵐ |
+> | **Example** | 𝐟(𝐱) = [x₁² + x₂, x₁x₂]ᵀ |
+> | **Input** | Vector 𝐱 ∈ ℝⁿ (e.g., 𝐱 = [1, 2]ᵀ) |
+> | **Output** | Jacobian matrix 𝐉 ∈ ℝᵐˣⁿ |
+> | **Result** | 𝐉 = [[2x₁, 1], [x₂, x₁]] = [[2, 1], [2, 1]] |
+> | **Interpretation** | Linear approximation of function |
 
 This is one of the most important cases in matrix calculus.
 
@@ -675,13 +681,16 @@ When changing variables in multiple integrals, the determinant |det(**J**)| appe
 
 ### Case 6: Matrix Function, Scalar Variable (∂𝐅/∂x)
 
-<div style="background-color:#f0f0f0; padding: 10px; border: 1px solid #ddd;">
-**API Description:**
-
-*   **Function Example:** 𝐅(x) = [[x, x²], [x³, x⁴]]
-*   **Input:** Scalar (x ∈ ℝ). Example: x = 2
-*   **Output:** Matrix (𝐅(x) ∈ ℝᵐˣⁿ). Example: 𝐅(x) = [[2, 2²], [2³, 2⁴]] = [[2, 4], [8, 16]]
-</div>
+> **📋 Quick Reference**
+> 
+> | **Aspect** | **Details** |
+> |------------|-------------|
+> | **Function Type** | 𝐅: ℝ → ℝᵐˣⁿ |
+> | **Example** | 𝐅(x) = [[x, x²], [x³, x⁴]] |
+> | **Input** | Scalar x (e.g., x = 2) |
+> | **Output** | Matrix ∂𝐅/∂x ∈ ℝᵐˣⁿ |
+> | **Result** | ∂𝐅/∂x = [[1, 2x], [3x², 4x³]] = [[1, 4], [12, 32]] |
+> | **Interpretation** | Element-wise rate of change |
 
 Finally, we consider functions that take a scalar input and produce a matrix output.
 
