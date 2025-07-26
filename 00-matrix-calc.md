@@ -13,6 +13,7 @@ Before diving into matrix calculus, you should be comfortable with:
 - **Basic programming**: familiarity with Python/NumPy is helpful but not required
 
 **Quick refresher resources:**
+
 - Khan Academy: Linear Algebra and Calculus courses
 - 3Blue1Brown: "Essence of Linear Algebra" YouTube series
 - NumPy documentation for computational examples
