@@ -287,13 +287,11 @@ Now let's examine each entry in the table with detailed explanations, examples, 
 ## Case 1: Scalar Function, Scalar Variable ($\frac{\partial f}{\partial x}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|--------------------------------------------------------|
-| **Function Type** | $f: \mathbb{R} \to \mathbb{R}$                         |
-| **Example** | $f(x) = x^2$                                           |
-| **Input** | Scalar $x$ (e.g., $x = 2$)                             |
-| **Output** | Scalar $\frac{\partial f}{\partial x}$ (e.g., $2x = 4$) |
-| **Interpretation**| Rate of change                                         |
+* **Function Type**: $f: \mathbb{R} \to \mathbb{R}$
+* **Example**: $f(x) = x^2$
+* **Input**: Scalar $x$ (e.g., $x = 2$)
+* **Output**: Scalar $\frac{\partial f}{\partial x}$ (e.g., $2x = 4$)
+* **Interpretation**: Rate of change
 :::
 
 This is the familiar case from single-variable calculus that you learned in your first calculus course.
@@ -341,14 +339,12 @@ If $f(x)$ represents profit when selling $x$ items, then $f'(x)$ is marginal pro
 ## Case 2: Scalar Function, Vector Variable ($\frac{\partial f}{\partial \mathbf{x}}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|------------------------------------------------------------------|
-| **Function Type** | $f: \mathbb{R}^n \to \mathbb{R}$                                 |
-| **Example** | $f(\mathbf{x}) = x_1^2 + x_2^2$                                  |
-| **Input** | Vector $\mathbf{x} \in \mathbb{R}^n$ (e.g., $\mathbf{x} = [1, 2]^T$) |
-| **Output** | Gradient vector $\nabla f \in \mathbb{R}^n$                      |
-| **Result** | $f(\mathbf{x}) = 1^2 + 2^2 = 5$                                  |
-| **Interpretation**| Direction of steepest increase                                   |
+* **Function Type**: $f: \mathbb{R}^n \to \mathbb{R}$
+* **Example**: $f(\mathbf{x}) = x_1^2 + x_2^2$
+* **Input**: Vector $\mathbf{x} \in \mathbb{R}^n$ (e.g., $\mathbf{x} = [1, 2]^T$)
+* **Output**: Gradient vector $\nabla f \in \mathbb{R}^n$
+* **Result**: $f(\mathbf{x}) = 1^2 + 2^2 = 5$
+* **Interpretation**: Direction of steepest increase
 :::
 
 This is where things get more interesting and where matrix calculus really begins.
@@ -419,14 +415,12 @@ This is like rolling a ball downhill - it naturally moves in the direction oppos
 ## Case 3: Scalar Function, Matrix Variable ($\frac{\partial f}{\partial \mathbf{X}}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|---------------------------------------------------------------------------------------------------------------|
-| **Function Type** | $f: \mathbb{R}^{m \times n} \to \mathbb{R}$                                                                   |
-| **Example** | $f(\mathbf{X}) = \text{tr}(\mathbf{X})$                                                                        |
-| **Input** | Matrix $\mathbf{X} \in \mathbb{R}^{m \times n}$ (e.g., $\mathbf{X} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$) |
-| **Output** | Matrix $\frac{\partial f}{\partial \mathbf{X}} \in \mathbb{R}^{m \times n}$                                     |
-| **Result** | $f(\mathbf{X}) = \text{tr}(\mathbf{X}) = 1 + 4 = 5$                                                            |
-| **Interpretation**| Sensitivity to each matrix element                                                                            |
+* **Function Type**: $f: \mathbb{R}^{m \times n} \to \mathbb{R}$
+* **Example**: $f(\mathbf{X}) = \text{tr}(\mathbf{X})$
+* **Input**: Matrix $\mathbf{X} \in \mathbb{R}^{m \times n}$ (e.g., $\mathbf{X} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$)
+* **Output**: Matrix $\frac{\partial f}{\partial \mathbf{X}} \in \mathbb{R}^{m \times n}$
+* **Result**: $f(\mathbf{X}) = \text{tr}(\mathbf{X}) = 1 + 4 = 5$
+* **Interpretation**: Sensitivity to each matrix element
 :::
 
 Now we consider functions that take an entire matrix as input and produce a single scalar output.
@@ -498,14 +492,12 @@ For example, in machine learning, we often add a term like $\lambda \|\mathbf{W}
 ## Case 4: Vector Function, Scalar Variable ($\frac{d\mathbf{f}}{dx}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|----------------------------------------------------------------------------|
-| **Function Type** | $\mathbf{f}: \mathbb{R} \to \mathbb{R}^m$                                  |
-| **Example** | $\mathbf{f}(x) = [x^2, x^3]^T$                                             |
-| **Input** | Scalar $x$ (e.g., $x = 2$)                                                 |
-| **Output** | Vector $\frac{d\mathbf{f}}{dx} \in \mathbb{R}^m$                            |
-| **Result** | $\frac{d\mathbf{f}}{dx} = [2x, 3x^2]^T = [4, 12]^T$                          |
-| **Interpretation**| Rate of change for each component                                          |
+* **Function Type**: $\mathbf{f}: \mathbb{R} \to \mathbb{R}^m$
+* **Example**: $\mathbf{f}(x) = [x^2, x^3]^T$
+* **Input**: Scalar $x$ (e.g., $x = 2$)
+* **Output**: Vector $\frac{d\mathbf{f}}{dx} \in \mathbb{R}^m$
+* **Result**: $\frac{d\mathbf{f}}{dx} = [2x, 3x^2]^T = [4, 12]^T$
+* **Interpretation**: Rate of change for each component
 :::
 
 Now we consider functions that take a single scalar input and produce multiple scalar outputs (arranged in a vector).
@@ -562,14 +554,12 @@ At time $t = \frac{\pi}{2}$, the particle is moving in the negative x-direction 
 ## Case 5: Vector Function, Vector Variable ($\frac{\partial \mathbf{f}}{\partial \mathbf{x}}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Function Type** | $\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$                                                                                                                            |
-| **Example** | $\mathbf{f}(\mathbf{x}) = [x_1^2 + x_2, x_1x_2]^T$                                                                                                                       |
-| **Input** | Vector $\mathbf{x} \in \mathbb{R}^n$ (e.g., $\mathbf{x} = [1, 2]^T$)                                                                                                     |
-| **Output** | Jacobian matrix $\mathbf{J} \in \mathbb{R}^{m \times n}$                                                                                                               |
-| **Result** | $\mathbf{J} = \begin{bmatrix} 2x_1 & 1 \\ x_2 & x_1 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 2 & 1 \end{bmatrix}$                                                         |
-| **Interpretation**| Linear approximation of function                                                                                                                                       |
+* **Function Type**: $\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$
+* **Example**: $\mathbf{f}(\mathbf{x}) = [x_1^2 + x_2, x_1x_2]^T$
+* **Input**: Vector $\mathbf{x} \in \mathbb{R}^n$ (e.g., $\mathbf{x} = [1, 2]^T$)
+* **Output**: Jacobian matrix $\mathbf{J} \in \mathbb{R}^{m \times n}$
+* **Result**: $\mathbf{J} = \begin{bmatrix} 2x_1 & 1 \\ x_2 & x_1 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 2 & 1 \end{bmatrix}$
+* **Interpretation**: Linear approximation of function
 :::
 
 This is one of the most important cases in matrix calculus.
@@ -689,14 +679,12 @@ When changing variables in multiple integrals, the determinant $|\det(\mathbf{J}
 ## Case 6: Matrix Function, Scalar Variable ($\frac{d\mathbf{F}}{dx}$)
 
 ::: {.callout-note title="Quick Reference"}
-| **Aspect** | **Details** |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Function Type** | $\mathbf{F}: \mathbb{R} \to \mathbb{R}^{m \times n}$                                                                                                                     |
-| **Example** | $\mathbf{F}(x) = \begin{bmatrix} x & x^2 \\ x^3 & x^4 \end{bmatrix}$                                                                                                      |
-| **Input** | Scalar $x$ (e.g., $x = 2$)                                                                                                                                               |
-| **Output** | Matrix $\frac{d\mathbf{F}}{dx} \in \mathbb{R}^{m \times n}$                                                                                                               |
-| **Result** | $\frac{d\mathbf{F}}{dx} = \begin{bmatrix} 1 & 2x \\ 3x^2 & 4x^3 \end{bmatrix} = \begin{bmatrix} 1 & 4 \\ 12 & 32 \end{bmatrix}$ |
-| **Interpretation**| Element-wise rate of change                                                                                                                                              |
+* **Function Type**: $\mathbf{F}: \mathbb{R} \to \mathbb{R}^{m \times n}$
+* **Example**: $\mathbf{F}(x) = \begin{bmatrix} x & x^2 \\ x^3 & x^4 \end{bmatrix}$
+* **Input**: Scalar $x$ (e.g., $x = 2$)
+* **Output**: Matrix $\frac{d\mathbf{F}}{dx} \in \mathbb{R}^{m \times n}$
+* **Result**: $\frac{d\mathbf{F}}{dx} = \begin{bmatrix} 1 & 2x \\ 3x^2 & 4x^3 \end{bmatrix} = \begin{bmatrix} 1 & 4 \\ 12 & 32 \end{bmatrix}$
+* **Interpretation**: Element-wise rate of change
 :::
 
 Finally, we consider functions that take a scalar input and produce a matrix output.
