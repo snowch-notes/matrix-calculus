@@ -27,9 +27,9 @@ jobs:
       # Render Quarto project to EPUB, HTML, and PDF
       - name: Render Quarto
         run: |
-          quarto render matrix-calculus-autodiff.qmd --to epub
-          quarto render matrix-calculus-autodiff.qmd --to html
-          quarto render matrix-calculus-autodiff.qmd --to pdf
+          quarto render matrix-calculus.qmd --to epub
+          quarto render matrix-calculus.qmd --to html
+          quarto render matrix-calculus.qmd --to pdf
 
       # Deploy to GitHub Pages (if on main branch)
       - name: Deploy to GitHub Pages
@@ -38,85 +38,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
-```
-
-### Explanation of Workflow
-- **Trigger**: Runs on `push` or `pull_request` to the `main` branch, aligning with typical CI/CD workflows.
-- **Checkout**: Uses `actions/checkout@v4` to clone the repository.
-- **Setup Quarto**: Uses `quarto-dev/quarto-actions/setup@v2` with `version: latest` to avoid specifying an outdated or incorrect version like `vv1.4.0`. The `tinytex: true` option installs TinyTeX for PDF rendering.
-- **Render Quarto**: Executes `quarto render` for EPUB, HTML, and PDF outputs, matching the formats in your `build.sh` script and the YAML header in `matrix-calculus-autodiff.qmd`.
-- **Deploy to GitHub Pages**: Deploys the `docs` directory (as specified in your project configuration) to GitHub Pages using `peaceiris/actions-gh-pages@v4`, but only on `push` to `main`. The `github_token` is provided automatically by GitHub Actions.
-
-### Step 2: Project Configuration
-Your provided project configuration snippet indicates a website project with output to the `docs` directory:
-
-```yaml
-project:
-  type: website
-  output-dir: docs
-
-website:
-  title: "Matrix Calculus"
-  navbar:
-    left:
-      - text: Home
-        href: index.html
-```
-
-To integrate this with `matrix-calculus-autodiff.qmd`, you need to ensure the Quarto document is part of the website structure. Since the project is a website, Quarto expects multiple documents (e.g., `index.qmd`, `matrix-calculus-autodiff.qmd`) to be rendered together. Here’s how to structure it:
-
-1. **Create `index.qmd`**:
-   Create a simple `index.qmd` to serve as the homepage, linking to `matrix-calculus-autodiff.qmd`.
-
-<xaiArtifact artifact_id="cec3090b-8a4d-4d26-99fd-07372f4acb6e" artifact_version_id="597c5d41-1ced-45ab-80ee-867921114f98" title="index.qmd" contentType="text/markdown">
-
-```markdown
----
-title: "Welcome to Matrix Calculus"
-format:
-  html:
-    toc: true
----
-
-# Matrix Calculus Tutorial
-
-This website provides a comprehensive guide to matrix calculus, focusing on automatic differentiation and computational considerations.
-
-- [Automatic Differentiation and Numerical Stability](matrix-calculus-autodiff.html)
-```
-
-2. **Update `_quarto.yml`**:
-   Save your project configuration as `_quarto.yml` in the root directory to define the website structure.
-
-<xaiArtifact artifact_id="fb11c4b4-e40f-4078-b321-7122940894db" artifact_version_id="d8abdb82-2c49-4cc4-b397-9dbaa48639ac" title="_quarto.yml" contentType="text/yaml">
-
-```yaml
-project:
-  type: website
-  output-dir: docs
-
-website:
-  title: "Matrix Calculus"
-  navbar:
-    left:
-      - text: Home
-        href: index.html
-      - text: Autodiff Guide
-        href: matrix-calculus-autodiff.html
-format:
-  html:
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    css: styles.css
-  pdf:
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    include-in-header:
-      - text: |
-          \usepackage{amsmath, amssymb}
-  epub:
-    toc: true
-    toc-depth: 3
-    number-sections: true
