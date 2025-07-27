@@ -25,3 +25,7 @@ quarto render "$QUARTO_FILE" --to epub
 # Render to PDF
 echo "Rendering to PDF..."
 quarto render "$QUARTO_FILE" --to pdf
+
+# Render to HTML
+echo "Rendering to HTML..."
+quarto render "$QUARTO_FILE" --to html --output-dir docs

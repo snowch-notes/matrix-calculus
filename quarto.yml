@@ -1,0 +1,10 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Matrix Calculus"
+  navbar:
+    left:
+      - text: Home
+        href: index.html
