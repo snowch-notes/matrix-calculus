@@ -20,11 +20,11 @@ fi
 
 # Render to EPUB
 echo "Rendering to EPUB..."
-quarto render "$QUARTO_FILE" --to epub
+quarto render "$QUARTO_FILE" --to epub --output-dir docs
 
 # Render to PDF
 echo "Rendering to PDF..."
-quarto render "$QUARTO_FILE" --to pdf
+quarto render "$QUARTO_FILE" --to pdf --output-dir docs
 
 # Render to HTML
 echo "Rendering to HTML..."

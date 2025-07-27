@@ -1,12 +1,12 @@
 ---
 title: "Matrix Calculus Derivatives: An Introduction"
-subtitle: "An introductory tutorial on understanding derivatives in matrix calculus with explanations for those with rusty linear algebra, geometry, and calculus knowledge"
+subtitle: "A work-in-progress introductory tutorial on understanding derivatives in matrix calculus with explanations for those with rusty linear algebra, geometry, and calculus knowledge"
 author: "Chris Snow"
 format:
   html:
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
     css: styles.css
   pdf:
     toc: true

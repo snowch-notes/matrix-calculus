@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Matrix Calculus"
+  theme: cosmo
   navbar:
     left:
       - text: Home
