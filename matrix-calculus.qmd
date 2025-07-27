@@ -235,8 +235,8 @@ $$\nabla f = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{
 -   The direction of steepest increase of the function
 -   How fast the function increases in that direction
 
-::: {.callout-note}
-**Key Insight**: In matrix calculus, the derivative must capture how each component of the output changes with respect to each component of the input. This means we need to keep track of many partial derivatives at once, which is where matrices become essential.
+::: {.callout-note title="Key Insight"}
+In matrix calculus, the derivative must capture how each component of the output changes with respect to each component of the input. This means we need to keep track of many partial derivatives at once, which is where matrices become essential.
 :::
 
 # The Matrix Calculus Derivatives Table
@@ -286,9 +286,7 @@ Now let's examine each entry in the table with detailed explanations, examples, 
 
 ## Case 1: Scalar Function, Scalar Variable ($\frac{\partial f}{\partial x}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|--------------------------------------------------------|
 | **Function Type** | $f: \mathbb{R} \to \mathbb{R}$                         |
@@ -342,9 +340,7 @@ If $f(x)$ represents profit when selling $x$ items, then $f'(x)$ is marginal pro
 
 ## Case 2: Scalar Function, Vector Variable ($\frac{\partial f}{\partial \mathbf{x}}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|------------------------------------------------------------------|
 | **Function Type** | $f: \mathbb{R}^n \to \mathbb{R}$                                 |
@@ -409,12 +405,10 @@ In optimization, we often want to find where $\nabla f = \mathbf{0}$ (the zero v
 
 These are critical points where the function might have local minima, maxima, or saddle points.
 
-::: {.callout-note}
-**Key Point**:
+::: {.callout-note title="Key Point"}
 The gradient is fundamental to gradient descent optimization.
 
 To minimize $f(\mathbf{x})$, we update $\mathbf{x}$ in the direction opposite to the gradient:
-
 $$\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)$$
 
 where $\alpha > 0$ is the learning rate (step size).
@@ -424,9 +418,7 @@ This is like rolling a ball downhill - it naturally moves in the direction oppos
 
 ## Case 3: Scalar Function, Matrix Variable ($\frac{\partial f}{\partial \mathbf{X}}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|---------------------------------------------------------------------------------------------------------------|
 | **Function Type** | $f: \mathbb{R}^{m \times n} \to \mathbb{R}$                                                                   |
@@ -505,9 +497,7 @@ For example, in machine learning, we often add a term like $\lambda \|\mathbf{W}
 
 ## Case 4: Vector Function, Scalar Variable ($\frac{d\mathbf{f}}{dx}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|----------------------------------------------------------------------------|
 | **Function Type** | $\mathbf{f}: \mathbb{R} \to \mathbb{R}^m$                                  |
@@ -571,9 +561,7 @@ At time $t = \frac{\pi}{2}$, the particle is moving in the negative x-direction 
 
 ## Case 5: Vector Function, Vector Variable ($\frac{\partial \mathbf{f}}{\partial \mathbf{x}}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Function Type** | $\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$                                                                                                                            |
@@ -673,8 +661,7 @@ $$
 -   $J_{22} = 1$: If we increase $x_2$ slightly, $f_2$ increases at rate $1$
 -   And so on...
 
-::: {.callout-note}
-**Theorem (Chain Rule for Jacobians)**:
+::: {.callout-note title="Theorem (Chain Rule for Jacobians)"}
 If $\mathbf{g}: \mathbb{R}^p \to \mathbb{R}^n$ and $\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$, then the Jacobian of the composition $\mathbf{h}(\mathbf{x}) = \mathbf{f}(\mathbf{g}(\mathbf{x}))$ is:
 
 $$\frac{\partial \mathbf{h}}{\partial \mathbf{x}} = \left( \frac{\partial \mathbf{f}}{\partial \mathbf{g}} \right) \left( \frac{\partial \mathbf{g}}{\partial \mathbf{x}} \right)$$
@@ -701,9 +688,7 @@ When changing variables in multiple integrals, the determinant $|\det(\mathbf{J}
 
 ## Case 6: Matrix Function, Scalar Variable ($\frac{d\mathbf{F}}{dx}$)
 
-::: {.callout-note}
-**Quick Reference**
-
+::: {.callout-note title="Quick Reference"}
 | **Aspect** | **Details** |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Function Type** | $\mathbf{F}: \mathbb{R} \to \mathbb{R}^{m \times n}$                                                                                                                     |
@@ -764,8 +749,7 @@ One of the most important concepts in matrix calculus is understanding the dimen
 
 This helps you check your work and understand the structure of the mathematics.
 
-::: {.callout-note}
-**Theorem (The Shape Rule)**:
+::: {.callout-note title="Theorem (The Shape Rule)"}
 The derivative $\frac{\partial \mathbf{Y}}{\partial \mathbf{X}}$ has dimensions that are determined by the dimensions of $\mathbf{Y}$ and $\mathbf{X}$.
 
 If $\mathbf{Y}$ has $p \times q$ elements and $\mathbf{X}$ has $r \times s$ elements, then the derivative conceptually lives in a space with $p \times q \times r \times s$ dimensions.
@@ -853,8 +837,7 @@ Don't try to memorize these all at once - focus on understanding the patterns an
 
 Linear forms are expressions where variables appear to the first power only (no squares, products, etc.).
 
-::: {.callout-note}
-**Theorem (Linear Form Derivatives)**:
+::: {.callout-note title="Theorem (Linear Form Derivatives)"}
 Let $\mathbf{a}$ be a constant vector and $\mathbf{A}$ be a constant matrix. Then:
 
 **Formula 1:** $\frac{\partial}{\partial \mathbf{x}}(\mathbf{a}^T \mathbf{x}) = \mathbf{a}$
@@ -883,8 +866,7 @@ So $\frac{\partial}{\partial \mathbf{x}}(\mathbf{a}^T \mathbf{x}) = \begin{bmatr
 
 Quadratic forms involve variables raised to the second power or products of variables.
 
-::: {.callout-note}
-**Theorem (Quadratic Form Derivatives)**:
+::: {.callout-note title="Theorem (Quadratic Form Derivatives)"}
 Let $\mathbf{A}$ be a constant matrix. Then:
 
 **Formula 1:** $\frac{\partial}{\partial \mathbf{x}}(\mathbf{x}^T \mathbf{A} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^T) \mathbf{x}$
@@ -918,9 +900,7 @@ So $\frac{\partial}{\partial \mathbf{x}}(\mathbf{x}^T \mathbf{A} \mathbf{x}) = 2
 
 The trace of a matrix is the sum of its diagonal elements: $\text{tr}(\mathbf{A}) = A_{11} + A_{22} + \cdots + A_{nn}$
 
-::: {.callout-note}
-**Theorem (Trace Derivatives)**:
-
+::: {.callout-note title="Theorem (Trace Derivatives)"}
 **Formula 1:** $\frac{\partial}{\partial \mathbf{X}} \text{tr}(\mathbf{X}) = \mathbf{I}$
 
 **Formula 2:** $\frac{\partial}{\partial \mathbf{X}} \text{tr}(\mathbf{A} \mathbf{X}) = \mathbf{A}^T$
@@ -950,8 +930,7 @@ So $\frac{\partial}{\partial \mathbf{X}} \text{tr}(\mathbf{A} \mathbf{X}) = \beg
 
 These formulas are more advanced but very important in statistics and optimization.
 
-::: {.callout-note}
-**Theorem (Determinant and Inverse Derivatives)**:
+::: {.callout-note title="Theorem (Determinant and Inverse Derivatives)"}
 For an invertible matrix $\mathbf{X}$:
 
 **Formula 1:** $\frac{\partial}{\partial \mathbf{X}} \det(\mathbf{X}) = \det(\mathbf{X})(\mathbf{X}^{-1})^T$
@@ -1139,8 +1118,7 @@ Just as we can take second derivatives in single-variable calculus, we can take 
 
 The most important second-order derivative is the Hessian matrix.
 
-::: {.callout-note}
-**Definition**:
+::: {.callout-note title="Definition"}
 The **Hessian matrix** of a scalar function $f: \mathbb{R}^n \to \mathbb{R}$ is:
 
 $$\mathbf{H} = \frac{\partial^2 f}{\partial \mathbf{x} \partial \mathbf{x}^T} = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right] \in \mathbb{R}^{n \times n}$$
@@ -1209,8 +1187,7 @@ An alternative approach to matrix calculus uses matrix differentials.
 
 This can be more intuitive for some calculations, especially when dealing with complex matrix expressions.
 
-::: {.callout-note}
-**Definition**:
+::: {.callout-note title="Definition"}
 The **differential** of a function $f(\mathbf{X})$ is defined by the first-order approximation:
 $f(\mathbf{X} + d\mathbf{X}) - f(\mathbf{X}) \approx df$
 where $df$ is a linear function of $d\mathbf{X}$. The relationship between the differential and the gradient is $df = \text{tr}\left( \left(\frac{\partial f}{\partial \mathbf{X}}\right)^T d\mathbf{X} \right)$.
@@ -1253,8 +1230,7 @@ $d(\det(\mathbf{A})) = \det(\mathbf{A}) \text{tr}(\mathbf{A}^{-1} d\mathbf{A})$
 
 When dealing with complex matrix derivatives, vectorization becomes a powerful tool.
 
-::: {.callout-note}
-**Definition**:
+::: {.callout-note title="Definition"}
 The **vectorization** operator $\text{vec}(\mathbf{A})$ stacks the columns of matrix $\mathbf{A}$ into a single column vector.
 :::
 
@@ -1264,8 +1240,7 @@ If $\mathbf{A} = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$, then $\text{vec}
 **Key property:**
 Vectorization converts matrix equations into vector equations, which are often easier to manipulate.
 
-::: {.callout-note}
-**Definition**:
+::: {.callout-note title="Definition"}
 The **Kronecker product** $\mathbf{A} \otimes \mathbf{B}$ is defined as:
 
 $$\mathbf{A} \otimes \mathbf{B} = \begin{bmatrix} a_{11} \mathbf{B} & a_{12} \mathbf{B} & \cdots \\ a_{21} \mathbf{B} & a_{22} \mathbf{B} & \cdots \\ \vdots & \vdots & \ddots \end{bmatrix}$$
@@ -1274,8 +1249,7 @@ $$\mathbf{A} \otimes \mathbf{B} = \begin{bmatrix} a_{11} \mathbf{B} & a_{12} \ma
 $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \otimes \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 1 \cdot \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} & 2 \cdot \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} \\ 3 \cdot \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} & 4 \cdot \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} \end{bmatrix} = \begin{bmatrix} 5 & 6 & 10 & 12 \\ 7 & 8 & 14 & 16 \\ 15 & 18 & 20 & 24 \\ 21 & 24 & 28 & 32 \end{bmatrix}$
 :::
 
-::: {.callout-note}
-**Theorem (Vectorization Identity)**:
+::: {.callout-note title="Theorem (Vectorization Identity)"}
 For matrices $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ of appropriate dimensions:
 
 $$\text{vec}(\mathbf{A} \mathbf{B} \mathbf{C}) = (\mathbf{C}^T \otimes \mathbf{A}) \text{vec}(\mathbf{B})$$
@@ -1405,8 +1379,7 @@ Example: $f: \mathbb{R}^{10^6} \to \mathbb{R}$ (1 million inputs, 1 output)
 
 **This is why neural networks can be trained efficiently!**
 
-::: {.callout-note}
-**Key Point**:
+::: {.callout-note title="Key Point"}
 Reverse mode autodiff is why we can efficiently train neural networks with millions of parameters.
 
 It computes all partial derivatives of a scalar loss function in time roughly proportional to the forward pass.
@@ -1628,8 +1601,7 @@ The dimensions of derivatives follow predictable patterns. Use this to check you
 
 ## The Big Picture
 
-::: {.callout-note}
-**Final Key Point**:
+::: {.callout-note title="Final Key Point"}
 Matrix calculus is not just a mathematical abstraction - it's the computational foundation that makes modern machine learning possible. Every time you train a neural network, optimize a complex function, or analyze multivariate data, you're using these principles. The most important skill is to think systematically about how small changes in inputs propagate through functions to affect the final outputs.
 :::
 

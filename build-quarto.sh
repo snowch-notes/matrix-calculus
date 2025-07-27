@@ -22,3 +22,6 @@ fi
 echo "Rendering to EPUB..."
 quarto render "$QUARTO_FILE" --to epub
 
+# Render to PDF
+echo "Rendering to PDF..."
+quarto render "$QUARTO_FILE" --to pdf
