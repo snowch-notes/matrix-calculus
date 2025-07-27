@@ -1420,7 +1420,12 @@ If $a_1 = 1000$, then $\exp(1000)$ is astronomically large and will overflow.
 **The solution:**
 Factor out the maximum value: Let $a_{\max} = \max_i a_i$.
 
-$\log(\sum_i \exp(a_i)) = \log(\exp(a_{\max})\sum_i \exp(a_i - a_{\max})) = a_{\max} + \log(\sum_i \exp(a_i - a_{\max}))$
+```latex
+\begin{aligned}
+\log(\sum_i \exp(a_i)) &= \log(\exp(a_{\max})\sum_i \exp(a_i - a_{\max})) \\
+&= a_{\max} + \log(\sum_i \exp(a_i - a_{\max}))
+\end{aligned}
+```
 
 **Why this works:**
 All the terms $\exp(a_i - a_{\max})$ are $\le 1$, so no overflow. At least one term equals 1, so the sum is at least 1, avoiding underflow in the log.
