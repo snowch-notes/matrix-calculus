@@ -1404,7 +1404,10 @@ Key Point
 <p><strong>The problem:</strong> Computing <span class="math inline">\(\log(\exp(a_1) + \exp(a_2) + \cdots + \exp(a_n))\)</span> directly can cause overflow or underflow.</p>
 <p><strong>Example:</strong> If <span class="math inline">\(a_1 = 1000\)</span>, then <span class="math inline">\(\exp(1000)\)</span> is astronomically large and will overflow.</p>
 <p><strong>The solution:</strong> Factor out the maximum value: Let <span class="math inline">\(a_{\max} = \max_i a_i\)</span>.</p>
-<p><span class="math inline">\(\log(\sum_i \exp(a_i)) = \log(\exp(a_{\max})\sum_i \exp(a_i - a_{\max})) = a_{\max} + \log(\sum_i \exp(a_i - a_{\max}))\)</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\log</span>(<span class="fu">\sum</span>_i <span class="fu">\exp</span>(a_i)) &amp;= <span class="fu">\log</span>(<span class="fu">\exp</span>(a_{<span class="fu">\max</span>})<span class="fu">\sum</span>_i <span class="fu">\exp</span>(a_i - a_{<span class="fu">\max</span>})) <span class="fu">\\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&amp;= a_{<span class="fu">\max</span>} + <span class="fu">\log</span>(<span class="fu">\sum</span>_i <span class="fu">\exp</span>(a_i - a_{<span class="fu">\max</span>}))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Why this works:</strong> All the terms <span class="math inline">\(\exp(a_i - a_{\max})\)</span> are <span class="math inline">\(\le 1\)</span>, so no overflow. At least one term equals 1, so the sum is at least 1, avoiding underflow in the log.</p>
 </section>
 </section>
@@ -1412,15 +1415,15 @@ Key Point
 <h2 data-number="10.3" class="anchored" data-anchor-id="implementation-tips"><span class="header-section-number">10.3</span> Implementation Tips</h2>
 <p><strong>Vectorization:</strong> Use vectorized operations in libraries like NumPy/PyTorch instead of explicit loops whenever possible. This is significantly faster.</p>
 <p><strong>Bad (slow):</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.rand(<span class="dv">1000</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.random.rand(<span class="dv">1000</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.zeros((<span class="dv">1000</span>, <span class="dv">1000</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        C[i,j] <span class="op">=</span> A[i,j] <span class="op">+</span> B[i,j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.rand(<span class="dv">1000</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.random.rand(<span class="dv">1000</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.zeros((<span class="dv">1000</span>, <span class="dv">1000</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        C[i,j] <span class="op">=</span> A[i,j] <span class="op">+</span> B[i,j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Good (fast):</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> A <span class="op">+</span> B  <span class="co"># Vectorized operation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> A <span class="op">+</span> B  <span class="co"># Vectorized operation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Broadcasting:</strong> Understand how broadcasting works in your framework to avoid unnecessary memory allocation and make code cleaner.</p>
 <p><strong>Batch operations:</strong> Process multiple data examples simultaneously when possible. This leverages parallel hardware (GPUs) for massive speedups.</p>
 </section>
