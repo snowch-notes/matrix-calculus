@@ -1,40 +1,25 @@
-name: Render Quarto Website and Deploy
-
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: main
+
+name: Quarto Publish
 
 jobs:
-  build-and-deploy:
+  build-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      # Checkout the repository
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      # Set up Quarto CLI with the latest version
-      - name: Setup Quarto
+      - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: latest  # Use the latest Quarto version to avoid 404 errors
-          tinytex: true   # Install TinyTeX for PDF rendering
 
-      # Render Quarto project to EPUB, HTML, and PDF
-      - name: Render Quarto
-        run: |
-          quarto render matrix-calculus.qmd --to epub
-          quarto render matrix-calculus.qmd --to html
-          quarto render matrix-calculus.qmd --to pdf
-
-      # Deploy to GitHub Pages (if on main branch)
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
